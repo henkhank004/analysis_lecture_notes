@@ -1,0 +1,25 @@
+# ignore standard LaTeX output files
+*.pdf
+!tex/figures/*.pdf
+*.dvi
+*.aux
+*.out
+*.log
+*.toc
+*.brf
+*.gz
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.loe
+
+
+# ignore figures
+*.pdf_tex
+
+# ignore other things
+*.zip
+**.cache
+.vscode

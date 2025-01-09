@@ -1,0 +1,90 @@
+\section{Sets, Spaces, and Functions}
+\subsection*{Metric Space and Normed Vector Spaces}
+
+
+\subsubsection*{Distance}
+\udef Let $X$ be a set. A function $d \colon X \times X \to \mathbb{R}$
+is a \ul{distance} if it satisfies all of the following properties:
+\begin{enumerate}[(i)]
+    \item (positivity)\\ $\forall x,y \in X \left[ d(x,y) \geq 0 \right]$,
+    \item (symmmetry)\\ $\forall x,y \in X \left[ d(x,y) = d(y,x) \right]$,
+    \item (triangle inequality)\\ $\forall x,y,z \in X \left[
+        d(x,z) \leq d(x,y) + d(y,z) \right]$,
+    \item (non-degeneracy)\\ $\forall x,y \in X \left[ d(x,y) = 0 \iff x = y \right]$,
+    \item (reflexicity, result of (iv))\\ $\forall x \in X \left[ d(x,x) = 0 \right]$.
+\end{enumerate}
+
+
+\subsubsection*{Metric Space}
+\udef Let $X$ be a set. Let $\text{dist}_X \colon X \times X \to \mathbb{R}$
+be a distance.
+
+We call $(X, \text{dist}_X)$ a \ul{metric space}.
+
+
+\subsubsection*{Vector Space}
+\udef A \ul{vector space} over a field $\mathbb{K}$
+(note that usually, but not exclusively, $\mathbb{K} = \mathbb{R}$ or $\mathbb{K} = \mathbb{C}$)
+is a set $V$ together with an element $0 \in V$ and operators $+\ \colon V \times V \to V$
+(addition) and $\cdot\ \colon \mathbb{K} \times V \to V$ (scalar multiplication)
+With the properties,
+\begin{enumerate}[(i)]
+    \item (commutativity of addition)\\
+        $\forall u,v \in V \left[ u v = v + u \right]$,
+    \item (associativity of addition)\\
+        $\forall u,v,w \in V \left[ u+(v+w) = (u+v)+w \right]$,
+    \item (0 as identity for addition)\\
+        $\forall v \in V \left[ v + 0 = v \right]$,
+    \item (1 as the identity of scalar multiplication)\\
+        $\forall v \in V \left[ 1 \cdot v = v \right]$,
+    \item (associativity of scalar multiplication)\\
+        $\forall \lambda,\mu \in \mathbb{K} \forall v \in V \left[
+            \lambda \cdot (\mu \cdot v) = (\lambda \cdot \mu) \cdot v \right]$,
+    \item (distributivity of scalar multiplication over addition)\\
+        $\forall u,v \in V \forall \lambda \in \mathbb{K} \left[
+        \lambda \cdot (v + w) = \lambda \cdot v + \lambda \cdot w \right]$,
+    \item (distributivity of scalar multiplication)\\
+        $\forall \lambda, \mu \in \mathbb{K} \forall v \in V \left[
+            (\lambda + \mu) \cdot \lambda = \lambda \cdot v + \mu \cdot v \right]$.
+\end{enumerate}
+May be denoted as $(V, +, \cdot, 0)$.
+Note that in this course it will be assumed that any vector space is over the field
+$\mathbb{R}$ unless stated otherwise.
+
+
+\subsubsection*{Norm}
+\udef Let $V$ be a vector space. We say that the function
+$\norm \colon V \to \mathbb{K}$ a \ul{norm} on $V$ if it satisfies
+\begin{enumerate}[(i)]
+    \item (positivity)\\ $\forall v \in V \left[ \| v \| \geq 0 \right]$,
+    \item (non-degeneracy)\\ $\forall v \in V \left[ \| v \| = 0 \iff v = 0 \right]$,
+    \item (absolute homogeneity)\\ $\forall v \in V \forall \lambda \in \mathbb{K}
+        \left[ \| \lambda v \| = | \lambda | \| v \| \right]$,
+    \item (triangle inequality)\\ $\forall u, v \in V \left[ 
+        \| u + v \| \leq \| u \| + \| v \| \right]$.
+\end{enumerate}
+
+
+\subsubsection*{Normed Vector Space}
+\udef Let $V$ be a vector space.
+Let $\norm_V\ \colon V \to \mathbb{K}$ be a norm on.
+We call $(V, \norm_V)$ a \ul{normed vector space}.
+
+
+\subsubsection*{Matric Spaces from Normed Vector Spaces}
+\uprop Any normed vector space gives rise to a metric space.
+In particular. Let $(V, \norm)$ be a normed vector space. Define
+the function $\distnorm \colon V \times V \to \mathbb{K}$ as
+\[
+    \distnorm(u,v) := \| u - v \|.
+\]
+Then $\distnorm$ is a distance on $V$. Therefore $(V, \distnorm)$ is a metric space.
+
+
+\subsubsection*{(Reverse) triangle inequality}
+Let $(V, \norm)$ be a normed vector space. 
+Then the following inequalities hold
+\begin{align*}
+    & \forall u,v \in V \left[ \| u + v \| \leq \| u \| + \| v \| \right],\\
+    & \forall u,v \in V \left[ | \| u \| - \| v \| | \leq \| u - v \| \right].
+\end{align*}

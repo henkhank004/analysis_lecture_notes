@@ -1,0 +1,115 @@
+\section{Real Numbers}
+
+
+\subsubsection*{Upper bound}
+\udef Let $R$ be a totally ordered field. Let $A \subset R$. Let $M \in R$.
+Then $M$ is an upperbound of $A$ if
+\begin{equation*}
+    \forall a \in A \left[ a \leq M \right].
+\end{equation*}
+
+
+\subsubsection*{Bounded from above}
+\udef Let $R$ be a totally ordered field. Let $A \subset R$. We say $A$ is
+bounded from above if $\exists M \in R \forall a \in A \left[ a \leq M \right]$.
+
+
+\subsubsection*{Lower bound}
+\udef Let $R$ be a totally ordered field. Let $A \subset R$. Let $M \in R$.
+Then $M$ is a lowerbound of $A$ if
+\begin{equation*}
+    \forall a \in A \left[ a \geq M \right].
+\end{equation*}
+
+
+\subsubsection*{Bounded from below}
+\udef Let $R$ be a totally ordered field. Let $A \subset R$. We say $A$ is
+bounded from below if $\exists M \in R \forall a \in A \left[ a \geq M \right]$.
+
+
+\subsubsection*{Completeness Axiom}
+A totally ordered field $R$ is \ul{complete} if every
+$A \subset R, A \neq \emptyset$ that is bounded from above has a least upper bound.
+
+
+\subsubsection*{Supremum}
+Let $A \subset \R$. Let $M \in \R$. We call $M$ the least upper bound of $A$ if both
+\begin{enumerate}[(i)]
+    \item $\forall a \in A \left[ a \leq M \right]$,
+    \item $\forall L \in \R \forall a \in A \left[ a \leq L \implies M \leq L \right]$.
+\end{enumerate}
+The least upper bound is unique.
+
+The function that gives the least upper bound of a set $A \subset \R$, which is
+non-empty and bounded from above, is called the \ul{supremum} and is denoted as
+\begin{equation*}
+    \sup A.
+\end{equation*}
+Note that often the least upper bound itself is called the supremum.
+
+
+\subsubsection*{Infemum}
+Let $A \subset \R$. Let $m \in \R$. We call $m$ the greatest lowest bound of $A$ if both
+\begin{enumerate}[(i)]
+    \item $\forall a \in A \left[ a \geq m \right]$,
+    \item $\forall l \in \R \forall a \in A \left[ a \leq l \implies m \geq l \right]$.
+\end{enumerate}
+The greatest lower bound is unique.
+
+The function that gives the greatest lower bound of a set $A \subset \R$, which is
+non-empty and bounded from below, is called the \ul{infemum} and is denoted as
+\begin{equation*}
+    \inf A.
+\end{equation*}
+Note that often the greatest lower bound itself is called the infemum.
+
+
+\subsubsection*{Alt. Char. Supremum}
+\uthm $Let A \subset \R$, suppose $A \neq \emptyset$ and bounded from above.
+Let $M \in \R$. $\sup A = M$ iff,
+\begin{enumerate}[(i)]
+    \item $\forall a \in A \left[ a \leq M \right]$ ($M$ is an upper bound of $A$),
+    \item $\forall \varepsilon > 0 \exists a \in A \left[ a > M - \varepsilon \right]$
+\end{enumerate}
+
+
+\subsubsection*{Alt. Char Infemum}
+\uthm Let $A \subset \R$, suppose $A \neq \emptyset$ and is bounded from below.
+Let $m \in \R$. $\inf A = m$ iff,
+\begin{enumerate}[(i)]
+    \item $\forall a \in A \left[ a \geq m \right]$ ($m$ is a lower bound of $A$),
+    \item $\forall \varepsilon > 0 \exists a \in A \left[ a < m + \varepsilon \right]$.
+\end{enumerate}
+
+
+\subsubsection*{Density of the Real Numbers}
+\uthm Let $x,y \in \R$ assume $x < y$. Then there exists $a \in \R$ s.t.
+$x < a < y$, i.e.
+\begin{equation*}
+    \forall x, y \in \R \exists a \in \R \left[ x < y \implies x < a < y \right].
+\end{equation*}
+
+
+\subsubsection*{Archemedian Property 1}
+\uthm Let $x \in \R$. Then there exists $n \in \N$ s.t. $x \leq n$, i.e.
+\begin{equation*}
+    \forall x \in \R \exists n \in \N \left[ x \leq n \right].
+\end{equation*}
+
+
+\subsubsection*{Archemedian Property 2}
+\uthm Let $x,y \in \R$ assume $x < y$. Then there exists $q \in \Q$ s.t. $x < q < y$,
+i.e.
+\begin{equation*}
+    \forall x, y \in \R \exists q \in \Q \left[ x < y \implies x < q < y \right].
+\end{equation*}
+This property is also known as the density of the rationals.
+
+
+\subsubsection*{Archemedian Property 3}
+\uthm Let $x,y \in \R$ assume $x < y$. Then there exists $r \in \R \setminus \Q$
+s.t. $x < r < y$, i.e.
+\begin{equation*}
+    \forall x, y \in \R \exists r \in \R \setminus \Q \left[ x < y \implies x < r < y \right].
+\end{equation*}
+This property is also known as the density of the irrationals.
