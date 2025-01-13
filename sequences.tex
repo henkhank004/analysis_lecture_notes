@@ -1,0 +1,68 @@
+\section*{Sequences}
+
+
+\subsubsection*{Sequence}
+\udef Let $X$ be a set. A \emph{sequence} $a : \N \to X$ is a function
+from the natural numbers $\N$ to $X$.
+
+
+\subsubsection*{Bounded sequence}
+\udef Let $(X, \dist)$ be a metric space.
+We say a sequence $a : \N \to X$ is \emph{bounded} if
+\[
+    \exists q \in X\ \forall M \geq 0\ \forall n \in \N \left[ 
+    \dist(a_n, q) \leq M \right].
+\]
+
+
+\subsubsection*{Bounded sequence in a normed vector space}
+\udef Let $(V, \norm)$ be a normed vector space.
+Let $a : \N \to V$. The sequence $a$ is bounded if, and only if,
+\[
+    \exists M \geq 0\ \forall n \in \N \left[ \| a_n \| \leq M \right].
+\]
+
+
+\subsubsection*{Convergence}
+Let $(X, \dist)$ be a metric space. Let $q \in X$. Let $a : \N \to X$.
+$a$ \emph{converges} to $p$ if
+\[
+    \forall \varepsilon > 0\ \exists N \in \N\ \forall n \geq N \left[
+    \dist(a_n,p) < \varepsilon \right].
+\]
+We often write
+\[
+    \lim_{n \to \infty}a_n = p.
+\]
+
+
+\subsubsection*{Uniqueness of limits}
+Let $(X, \dist)$ be a metric space. Let $p,q \in X$. Let $a : \N \to X$.
+Assume both $a$ converges to $p$ \emph{and} $a$ converges to $q$, then $p = q$ i.e.,
+\[
+    \left( \lim_{n \to \infty} a_n = p \land \lim_{n \to \infty} a_n = q \right)
+    \implies p = q.
+\]
+
+
+\subsubsection*{Limit Theoroms}
+Let $(V, \norm)$ be a normed vector space.\\
+Let $a,b : \N \to V$. Let $\lambda : \N \to \R$.\\
+Let $p,q \in V$ Let $\mu \in \R$.\\
+Assume that
+\begin{align*}
+    \lim_{n \to \infty} a_n &= p,\\
+    \lim_{n \to \infty} b_n &= q,\\
+    \lim_{n \to \infty} \lambda_n &= \mu.
+\end{align*}
+Then
+\begin{enumerate}
+    \item $\lim_{n \to \infty} (a_n + b_n) = p + q$,
+    \item $\lim_{n \to \infty} (\lambda_n \cdot a_n) = \mu \cdot p$.
+\end{enumerate}
+
+
+\subsubsection*{Index shift}
+Ket $(X, \dist)$ be a metric space. Let $a : \N \to X$. Let $k \in \N$.\\
+Define $b : \N \to X$ as $b_n := a_{n+k}$.\\
+Then $a$ converges to $q$ if, and only if, $b$ converges to $a$
