@@ -1,0 +1,131 @@
+\section{Subsequences, lim sup, and lim inf}
+
+
+\subsection{Index sequences and subsequences}
+
+\subsection(Index sequences and subsequences)
+\subsubsection*{Index sequence}
+\udef We say a sequence $n : \N \to \N$ is an \emph{index sequence}
+if $n$ is strinctly increasing, i.e.
+\[
+    \forall k \in \N \left[ n_{k+1} > n_k \right].
+\]
+
+\subsubsection*{Subsequence}
+\udef Let $X$. Let $a,b : \N \to X$. We call $b$ a \emph{subsequence} of $a$
+if there exists an index sequence $n : \N \to \N$ such that $b = a \circ n$.
+
+\subsection{Accumulation points and subsequences of converging sequences}
+\subsection{(Sequential) accumulation points}
+\udef Let $(X, \dist)$ be a metric space. A point $p \in X$ is called
+a \emph{accumulation point} of a sequence $a : \N \to X$ if there exists
+an index sequence $n : \N \to \N$ such that the subsequence $a \circ n$
+converges to $p$. 
+
+\section{Subsequences of a converging sequence}
+\uprop Let $(X, \dist)$ be a metric space. Let $a : \N \to X$ be convergent to
+$p \in X$. Then every subsequence of $a$ is convergent to $p$.
+
+
+\subsection{lim sup}
+\ulem Let $a : \N \to \R$ be bounded from above. Assume $a$ does not diverge
+to $-\infty$. Then the sequence $k \mapsto \sup_{n \geq k} a_n$ is bounded
+from below.
+
+\subsubsection*{Limit superior}
+\udef Let $a : \N \to \R$. The sequence $k \mapsto \sup_{n \geq k} a_n$ is bounded
+from below and has a limit, this limit is equal to the infemum of the sequence.
+This limit is called the $\limsup$. That is,
+\begin{align*}
+    \limsup_{n \to \infty} a_n :&= \inf_{k \in \N} \sup_{n \geq k} a_n\\ 
+        &= \lim_{k \to \infty} \left( \sup_{n \geq k} a_n \right).
+\end{align*}
+
+We can thus write the following equality,
+\[
+    \limsup_{l \to \infty} a_l = \begin{cases}
+        \infty & \text{if  $a$ is not bounded from above},\\
+        -\infty & \text{if $a$ diverges to $-\infty$},\\
+        \lim_{l \to \infty} \sup \left\{ a_k \middle| k \geq l \right\}
+            & \text{in other cases}.
+    \end{cases}
+\]
+
+\newpage
+
+\subsubsection*{Alt char. lim sup}
+Let $a : \N \to \R$. Let $M \in \R$.\\
+Then $\limsup_{k \to \infty} a_k = M$ if, and only if,
+\begin{enumerate}[(i)]
+    \item $\forall \varepsilon > 0\ \exists N \in \N\ \forall n \geq N \left[ a_n < M + \varepsilon \right]$,
+    \item $\forall \varepsilon > 0\ \forall K \in \N\ \exists l \geq K \left[ a_l > M - \varepsilon \right]$.
+\end{enumerate}
+
+\subsubsection*{}
+\uthm Let $a : \N \to \R$ be bounded from above. Assume $a$ does not diverge to
+$-\infty$.\\ Then $\limsup_{l \to \infty} a_l$ is the \emph{maximum} of the set
+of sequential accumulation points.
+
+\subsubsection*{Bolzano-Weierstrass}
+\uthm Every bounded, real-valued sequence has a subsequence that converges
+in $(\R, \dist_\R)$.
+
+
+\subsection{Limit inferior}
+\ulem Let $a : \N \to \R$ be bounded from below. Assume $a$ does not diverge
+to $\infty$. Then the sequence $k \mapsto \inf_{n \geq k} a_n$ is bounded
+from above.
+
+\subsubsection*{Limit inferior}
+\udef Let $a : \N \to \R$. The sequence $k \mapsto \inf_{n \geq k} a_n$ is bounded
+from above and has a limit, this limit is equal to the supremum of the sequence.
+This limit is called the $\liminf$. That is,
+\begin{align*}
+    \liminf_{n \to \infty} a_n :&= \sup_{k \in \N} \inf_{n \geq k} a_n\\ 
+        &= \lim_{k \to \infty} \left( \inf_{n \geq k} a_n \right).
+\end{align*}
+
+We can thus write the following equality,
+\[
+    \liminf_{l \to \infty} a_l = \begin{cases}
+        -\infty & \text{if  $a$ is not bounded from below},\\
+        \infty & \text{if $a$ diverges to $\infty$},\\
+        \lim_{l \to \infty} \inf \left\{ a_k \middle| k \geq l \right\}
+            & \text{in other cases}.
+    \end{cases}
+\]
+
+\subsubsection*{Alt char. lim inf}
+Let $a : \N \to \R$. Let $M \in \R$. Then $M = \liminf_{l \to \infty} a_l$ if,
+and only if,
+\begin{enumerate}[(i)]
+    \item $\forall \varepsilon > 0\ \exists N \in \N\ \forall n \geq N \left[ a_n > M - \varepsilon \right]$,
+    \item $\forall \varepsilon > 0\ \forall K \in \N\ \exists l \geq K \left[ a_n < M + \varepsilon \right]$.
+\end{enumerate}
+
+\subsubsection*{}
+\uthm Let $a : \N \to \R$ be bounded from below. Assume $a$ does not diverge to
+$\infty$.\\ Then $\liminf_{l \to \infty} a_l$ is the \emph{minimum} of the set
+of sequential accumulation points.
+
+\newpage
+
+\subsection{Relations between lim, lim sup, and lim inf}
+\uprop Let $a : \N \to \R$. Let $L \in R$. Then $a$ converges to $L$ if,
+and only if
+\[
+    \liminf_{l \to \infty} a_l = \limsup_{l \to \infty} a_l = L.
+\]
+Moreover if the above condition is true, then the $\lim_{l \to \infty} a_l$
+exists and
+\[
+    \lim_{l \to \infty} a_l = \liminf_{l \to \infty} a_l = \limsup_{l \to \infty} a_l = L.
+\]
+
+\subsubsection*{}
+\uprop Let $a,b : \N \to \R$. Assume that $\exists N \in \N\ \forall n \geq N
+\left[ a_n \leq b_n \right]$. Then
+\begin{align*}
+    \limsup_{l \to \infty} a_l \leq &\limsup_{l \to \infty} b_l, \text{ and}\\
+    \liminf_{l \to \infty} a_l \leq &\liminf_{l \to \infty} b_l.
+\end{align*}

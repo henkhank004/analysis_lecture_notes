@@ -1,5 +1,6 @@
 \documentclass[fleqn]{article}
 
+\usepackage[utf8]{inputenc}
 \usepackage{enumerate}
 \usepackage{mathtools}
 \usepackage{amsmath}
@@ -23,10 +24,11 @@
 
 \newcommand{\ul}[1]{\underline{#1}}
 
-\newcommand{\udef}{\ul{Definition:} }
-\newcommand{\uthm}{\ul{Theorom:} }
-\newcommand{\uprop}{\ul{Proposition:} }
-\newcommand{\ucol}{\ul{Corollary:} }
+\newcommand{\udef}{\textbf{Definition:} }
+\newcommand{\uthm}{\textbf{Theorom:} }
+\newcommand{\uprop}{\textbf{Proposition:} }
+\newcommand{\ucol}{\textbf{Corollary:} }
+\newcommand{\ulem}{\textbf{Lemma:} }
 \newcommand{\warning}{\textbf{\textcolor{red}{Warning: }}}
 
 \newcommand{\dist}{\mathsf{dist}}
@@ -68,6 +70,7 @@ Examples and proofs can be found in the original lecture notes for 2MBA40 and 2M
 \include{series}
 \include{positive_series}
 \include{general_series}
+\include{subseq_limsup_liminf.tex}
 
 
 \end{document}
