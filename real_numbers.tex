@@ -113,3 +113,32 @@ s.t. $x < r < y$, i.e.
     \forall x, y \in \R \exists r \in \R \setminus \Q \left[ x < y \implies x < r < y \right].
 \end{equation*}
 This property is also known as the density of the irrationals.
+
+
+\subsubsection*{Computation Rules for suprema and infema}
+Let $A, B \subset \R$. Let $\lambda \in \R$. Define,
+\begin{align*}
+    A + B &:= \left\{ a + b\ \middle|\ a \in A, b \in B \right\}\text{, and}\\
+    \lambda A &:= \left\{ \lambda a\ \middle|\ a \in A \right\}.
+\end{align*}
+\uprop Let $A,B,C,D \subset \R$ by nonempty. Assume that $A,B$ are bounded from
+above and $C,D$ are bounded from below. Let $\lambda \in \R, \lambda \geq 0$ Then
+\begin{enumerate}[(i)]
+    \item $\sup(A + B) = \sup A + \sup B$,
+    \item $\inf(C + D) = \inf C + \inf D$,
+    \item $\sup(\lambda A) = \lambda \sup A$,
+    \item $\inf(\lambda C) = \lambda \inf C$,
+    \item $\sup(-C) = - \inf C$,
+    \item $\inf(-A) = - \sup A$.
+\end{enumerate}
+
+
+\subsubsection*{Newton's Binomial Theorom}
+\uthm Let $a, b \in \R$, then
+\[
+    (a+b)^n = \sum_{k = 0}^{n} \binom{n}{k} a^k b^{n-k}
+\]
+With $\binom{n}{k}$ ($n$ choose $k$) defined as
+\[
+    \frac{n!}{k!(n-k)!}
+\]
