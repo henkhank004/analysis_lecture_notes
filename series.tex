@@ -1,0 +1,119 @@
+\section{Series}
+
+\subsection{Definition}
+\udef Let $(V, \norm)$ be a normed vector space.\\
+Let $a : \N \to V$. Let $K \in \N$.\\
+We say that a series
+\[
+    \sum_{n=K}^{\infty} a_n
+\]
+is \emph{convergent} if the associated \emph{sequence of partial sums}
+$S_K : \N \to V$ converges.
+The term $S_K^n$ is, for $n \in \N$, defined as
+\[
+    S_K^n := \sum_{k=K}^{n} a_k
+\]
+If $K = 0$, we usually write $S^n$ or $S_n$ instead of $S_0^n$.
+If the series $\sum_{n=K}^{\infty}$ is convergent, the \emph{value} of the series
+is defined as the limit of the sequence of partial sums, i.e.
+\[
+    \sum_{k=K}^{\infty} a_k := \lim_{n \to \infty} S_K^n
+        = \lim_{n \to \infty} \sum_{k=K}^{n} a_k.
+\]
+
+\subsection{Geometric series}
+\uprop Let $a \neq 1$ and $n \in \N$. Then
+\[
+    \sum_{k=0}^{n} a^k = \frac{1 - a^{n+1}}{1 - a}.
+\]
+
+\subsubsection*{}
+\uprop Let $a \in (-1, 1)$. Then
+\[
+    \sum_{k=0}^{\infty} a^k = \frac{1}{1-a}.
+\]
+
+\subsection{Harmonic Series}
+\uprop The series
+\[
+    \sum_{k=1}^{\infty} \frac{1}{k}
+\]
+diverges.
+
+\subsection{Hyperharmonic Series}
+\uprop Let $p > q$ then the series
+\[
+    \sum_{k=1}^{\infty} \frac{1}{k^p}
+\]
+converges.
+
+\subsubsection*{Basel Problem}
+\uthm
+\[
+    \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+\]
+
+
+\subsection{Only the tail matters for convergence}
+\uprop Let $(V, \norm)$ be a normed vector space.\\
+Let $a : \N \to V$. Let $K,L \in \N$. Then the series
+\[
+    \sum_{n=K}^{\infty} a_n
+\]
+converges if, and only if,
+\[
+    \sum_{n=L}^{\infty} a_n
+\]
+converges. Moreover, if they converge and $K < L$, then
+\[
+    \sum_{n=K}^{\infty} a_n = \sum_{n=K}^{L-1} a_n + \sum_{n=K}^{\infty} a_n.
+\]
+
+\subsubsection*{}
+\uprop Let $(V, \norm)$ be a normed vector space.\\
+Let $a : \N \to V$. Let $M \in \N$. Assume the series
+\[
+    \sum_{k=M}^{\infty} a_k
+\]
+is convergent. Then
+\[
+    \lim_{m \to \infty} \sum_{k=m}^{\infty} a_k = 0.
+\]
+
+\subsubsection*{Index shift for sequences}
+Let $(V, \norm)$ be a normed vector space.\\
+Let $a : \N \to V$, let $M, l \in \N$. Then the series
+\[
+    \sum_{k=M}^{\infty} a_k
+\]
+converges if, and only if,
+\[
+    \sum_{k=M}^{\infty} a_{k+l}
+\]
+converges. Moreover, if they converge,
+\[
+    \sum_{k=M}^{\infty} a_{k+l} = \sum_{k=M+l}^{\infty} a_k.
+\]
+
+
+\subsection{Divergence test}
+\uthm Let $(V, \norm)$ be a normed vector space.\\
+Let $a : \N \to V$. Suppose the series $\sum_{n=0}^{\infty} a_n$ converges.
+Then
+\[
+    \lim_{n \to \infty} a_n = 0.
+\]
+In other words: if the limit $\lim_{n \to \infty} a_n$ diverges or is not
+equal to $0$, then the series $\sum_{n=0}^{\infty} a_n$ diverges.
+Note that this condition is necessary but \emph{not} sufficient.
+
+
+\subsection{Limit laws for series}
+\uthm Let $(V, \norm)$ be a normed vector space.\\
+Let $a,b : \N \to V$. Let $\lambda \in \R$.\\
+Suppose $\sum_{k=0}^{\infty} a_k$ and $\sum_{k=0}^{\infty} b_k$ converge.\\
+Then the following series converge and are equal to,
+\begin{enumerate}[(i)]
+    \item $\sum_{k=0}^{\infty} (a_k + b_k) = \sum_{k=0}^{\infty} a_k + \sum_{k=0}^{\infty} a_k$,
+    \item $\sum_{k=0}^{\infty} (\lambda a_k) = \lambda \sum_{k=0}^{\infty} a_k$.
+\end{enumerate}
