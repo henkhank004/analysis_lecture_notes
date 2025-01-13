@@ -1,7 +1,7 @@
 \section{Real Numbers}
 
 
-\subsubsection*{Upper bound}
+\subsection{Upper bound}
 \udef Let $R$ be a totally ordered field. Let $A \subset R$. Let $M \in R$.
 Then $M$ is an upperbound of $A$ if
 \begin{equation*}
@@ -9,12 +9,12 @@ Then $M$ is an upperbound of $A$ if
 \end{equation*}
 
 
-\subsubsection*{Bounded from above}
+\subsection{Bounded from above}
 \udef Let $R$ be a totally ordered field. Let $A \subset R$. We say $A$ is
 bounded from above if $\exists M \in R \forall a \in A \left[ a \leq M \right]$.
 
 
-\subsubsection*{Lower bound}
+\subsection{Lower bound}
 \udef Let $R$ be a totally ordered field. Let $A \subset R$. Let $M \in R$.
 Then $M$ is a lowerbound of $A$ if
 \begin{equation*}
@@ -22,17 +22,17 @@ Then $M$ is a lowerbound of $A$ if
 \end{equation*}
 
 
-\subsubsection*{Bounded from below}
+\subsection{Bounded from below}
 \udef Let $R$ be a totally ordered field. Let $A \subset R$. We say $A$ is
 bounded from below if $\exists M \in R \forall a \in A \left[ a \geq M \right]$.
 
 
-\subsubsection*{Completeness Axiom}
+\subsection{Completeness Axiom}
 A totally ordered field $R$ is \ul{complete} if every
 $A \subset R, A \neq \emptyset$ that is bounded from above has a least upper bound.
 
 
-\subsubsection*{Supremum}
+\subsection{Supremum}
 Let $A \subset \R$. Let $M \in \R$. We call $M$ the least upper bound of $A$ if both
 \begin{enumerate}[(i)]
     \item $\forall a \in A \left[ a \leq M \right]$,
@@ -48,7 +48,7 @@ non-empty and bounded from above, is called the \ul{supremum} and is denoted as
 Note that often the least upper bound itself is called the supremum.
 
 
-\subsubsection*{Infemum}
+\subsection{Infemum}
 Let $A \subset \R$. Let $m \in \R$. We call $m$ the greatest lowest bound of $A$ if both
 \begin{enumerate}[(i)]
     \item $\forall a \in A \left[ a \geq m \right]$,
@@ -64,7 +64,7 @@ non-empty and bounded from below, is called the \ul{infemum} and is denoted as
 Note that often the greatest lower bound itself is called the infemum.
 
 
-\subsubsection*{Alt. Char. Supremum}
+\subsection{Alt. Char. Supremum}
 \uthm $Let A \subset \R$, suppose $A \neq \emptyset$ and bounded from above.
 Let $M \in \R$. $\sup A = M$ iff,
 \begin{enumerate}[(i)]
@@ -73,7 +73,7 @@ Let $M \in \R$. $\sup A = M$ iff,
 \end{enumerate}
 
 
-\subsubsection*{Alt. Char Infemum}
+\subsection{Alt. Char Infemum}
 \uthm Let $A \subset \R$, suppose $A \neq \emptyset$ and is bounded from below.
 Let $m \in \R$. $\inf A = m$ iff,
 \begin{enumerate}[(i)]
@@ -82,7 +82,7 @@ Let $m \in \R$. $\inf A = m$ iff,
 \end{enumerate}
 
 
-\subsubsection*{Density of the Real Numbers}
+\subsection{Density of the Real Numbers}
 \uthm Let $x,y \in \R$ assume $x < y$. Then there exists $a \in \R$ s.t.
 $x < a < y$, i.e.
 \begin{equation*}
@@ -90,14 +90,14 @@ $x < a < y$, i.e.
 \end{equation*}
 
 
-\subsubsection*{Archemedian Property 1}
+\subsection{Archemedian Property 1}
 \uthm Let $x \in \R$. Then there exists $n \in \N$ s.t. $x \leq n$, i.e.
 \begin{equation*}
     \forall x \in \R \exists n \in \N \left[ x \leq n \right].
 \end{equation*}
 
 
-\subsubsection*{Archemedian Property 2}
+\subsection{Archemedian Property 2}
 \uthm Let $x,y \in \R$ assume $x < y$. Then there exists $q \in \Q$ s.t. $x < q < y$,
 i.e.
 \begin{equation*}
@@ -106,7 +106,7 @@ i.e.
 This property is also known as the density of the rationals.
 
 
-\subsubsection*{Archemedian Property 3}
+\subsection{Archemedian Property 3}
 \uthm Let $x,y \in \R$ assume $x < y$. Then there exists $r \in \R \setminus \Q$
 s.t. $x < r < y$, i.e.
 \begin{equation*}
@@ -115,7 +115,7 @@ s.t. $x < r < y$, i.e.
 This property is also known as the density of the irrationals.
 
 
-\subsubsection*{Computation Rules for suprema and infema}
+\subsection{Computation Rules for suprema and infema}
 Let $A, B \subset \R$. Let $\lambda \in \R$. Define,
 \begin{align*}
     A + B &:= \left\{ a + b\ \middle|\ a \in A, b \in B \right\}\text{, and}\\
@@ -133,7 +133,7 @@ above and $C,D$ are bounded from below. Let $\lambda \in \R, \lambda \geq 0$ The
 \end{enumerate}
 
 
-\subsubsection*{Newton's Binomial Theorom}
+\subsection{Newton's Binomial Theorom}
 \uthm Let $a, b \in \R$, then
 \[
     (a+b)^n = \sum_{k = 0}^{n} \binom{n}{k} a^k b^{n-k}
