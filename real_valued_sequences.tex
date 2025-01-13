@@ -1,0 +1,172 @@
+\section{Real valued sequences}
+
+
+
+\subsection{Monotone Sequences}
+\udef Let $a : \N \to \R$. We call $a$ \emph{non-decreasing} if
+\[
+    \forall n \in \N \left[ a_{n+1} \geq a_n \right]
+\]
+\udef We call $a$ \emph{strictly increasing} if
+\[
+    \forall n \in \N \left[ a_{n+1} > a_n \right]
+\]
+\udef Let $a : \N \to \R$. We call $a$ \emph{non-increasing} if
+\[
+    \forall n \in \N \left[ a_{n+1} \leq a_n \right]
+\]
+\udef We call $a$ \emph{strictly decreasing} if
+\[
+    \forall n \in \N \left[ a_{n+1} < a_n \right]
+\]
+\udef We call $a$ bounded from above if
+\[
+    \exists M \in \R\ \forall n \in \N \left[ a_n \leq M \right].
+\]
+\udef We call $a$ bounded from below if
+\[
+    \exists M \in \R\ \forall n \in \N \left[ a_n \geq M \right].
+\]
+
+
+\subsection{Every bounded, monotone real-valued sequence converges}
+\udef For every $\R$-valued sequence, we call a sequence \emph{monotone} if
+it is non-decreasing or non-increasing.
+
+\subsubsection*{}
+\uthm Let $a : \N \to \R$ be bounded from above and non-decreasing. Then $a$
+\emph{converges} and
+\[
+    \lim_{n \to \infty} a_n = \sup_{n \in \N} a_n
+        := \sup \left\{ a_n\ \middle|\ n \in \N \right\}.
+\]
+
+\subsubsection*{}
+\uthm Let $a : \N \to \R$ be bounded from below and non-increasing. Then $a$
+\emph{converges} and 
+\[
+    \lim_{n \to \infty} a_n = \inf_{n \in \N} a_n
+        := \inf \left\{ a_n\ \middle|\ n \in \N \right\}.
+\]
+
+
+\subsection{Limit Theoroms}
+\uthm Let $a,b : \N \to \R$. Let $c,d \in \R$.\\
+Assume
+\begin{align*}
+    \lim_{n \to \infty} a_n &= c \text{, and}\\
+    \lim_{n \to \infty} b_n &= d.
+\end{align*}
+Then
+\begin{enumerate}
+    \item $\lim_{n \to \infty} ( a_n + b_n ) = c + d$,
+    \item $\lim_{n \to \infty} ( a_n \cdot b_n) = c \cdot d$,
+    \item if $d \neq 0$, then $\lim_{n \to \infty} \frac{a_n}{b_n} = \frac{c}{d}$,
+    \item $\forall m \in \N \left[ \lim_{n \to \infty} (a_n)^m = c^m \right]$,
+    \item $\forall n \in \N\ \forall k \in \N \setminus \{0\} \left[ a_n \geq 0 \implies
+        \lim_{n \to \infty} (a_n)^{\frac{1}{k}} = c^{\frac{1}{k}} \right]$
+\end{enumerate}
+Combining (iv) and (v) yields
+\[
+    \forall n \in \N\ \forall q \in \Q \left[
+        a_n \geq 0 \implies \lim_{n \to \infty} (a_n)^q = c^q \right].
+\]
+
+
+\subsection{Squeeze Theorom}
+\uthm Let $a,b,c : \N \to \R$.\\
+Assume that $\exists N \in \N\ \forall n \geq N \left[ a_n \leq b_n \leq c_n \right]$.\\
+Assume that $a$ and $c$ converge, moreover assume
+    $\lim_{n \to \infty} a_n = \lim_{n \to \infty} c_n$.\\
+Then also
+\[
+    \lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = \lim_{n \to \infty} c_n.
+\]
+
+
+\subsection{Divergence to $\infty$ and $-\infty$}
+\udef Let $a : \N \to \R$ we say $a$ diverges to $\infty$ and write
+$\lim_{n \to \infty} a_n = \infty$ if
+\[
+    \forall M \in \R\ \exists N \in \N\ \forall n \geq N \left[
+    a_n > M \right].
+\]
+Similarly, we say $a$ diverges to $-\infty$ and write
+$\lim_{n \to \infty} a_n = -\infty$ if
+\[
+    \forall M \in \R\ \exists N \in \N\ \forall n \geq N \left[
+    a_n < M \right].
+\]
+
+\subsubsection*{}
+\uprop Let $a : \N \to \R$ be a sequence diverging to $\infty$.\\
+Then $a$ is bounded from below.\\
+
+Let $b : \N \to \R$ be a sequence diverging to $-\infty$.\\
+Then $b$ is bounded from above.\\
+
+
+\subsection{Limit theoroms for improper limits}
+\uthm Let $a,b,c,d : \N \to \R$. Assume
+\begin{align*}
+    &\lim_{n \to \infty} a_n = \infty,\\
+    &\lim_{n \to \infty} c_n = -\infty,\\
+    &\text{$b$ is bounded from below},\\
+    &\text{$d$ is bounded from above}.
+\end{align*}
+Let $\lambda : \N \to \R$ be bounded from below by some $\mu > 0$.
+Then
+\begin{enumerate}
+    \item $\lim_{n \to \infty} (a_n + b_n) = \infty$,
+    \item $\lim_{n \to \infty} (c_n + d_n) = -\infty$,
+    \item $\lim_{n \to \infty} (\lambda_n a_n) = \infty$,
+    \item $\lim_{n \to \infty} (\lambda_n c_n) = -\infty$.
+\end{enumerate}
+
+
+\subsubsection*{}
+\uprop Let $a : \N \to \R$. Let $b : \N \to (0, \infty)$ Then,
+\begin{enumerate}
+    \item $\lim_{n \to \infty} a_n = \infty \iff \lim_{n \to \infty} (-a_n) = -\infty$,
+    \item $\lim_{n \to \infty} b_n = \infty \iff \lim_{n \to \infty} \frac{1}{b_n} = 0$.
+\end{enumerate}
+
+
+\subsection{Standard sequences}
+
+\subsubsection*{Geometric Sequence}
+\uprop Let $q \in \R$ Define $a : \N \to \R$ by $a_n := q^n$
+\[
+    \lim_{n \to \infty} a_n = \lim_{n \to \infty} q^n =
+    \begin{cases}
+        \infty & \text{if } q > 1,\\
+        1 & \text{if } q = 1,\\
+        0 & \text{if } q \in (-1, 1),\\
+        \text{diverges} & \text{if } q \leq -1.
+    \end{cases}
+\]
+
+\subsection*{The $n^{\text{th}}$ root of $n$}
+\uprop The sequence $n \mapsto \sqrt[n]{n}$ converges to $1$.
+
+\subsection*{Definition of $e$}
+\udef We define
+\[
+    e := \lim_{n \to \infty} \left( 1 + \frac{1}{n} \right)^n
+\]
+
+\subsection*{Exponentials beat powers}
+\uprop Let $a \in (1, \infty)$ and let $p \in (0, \infty)$. Then
+\[
+    \lim_{n \to \infty} \frac{n^p}{a^n} = 0.
+\]
+
+
+\subsection{$\R^d$-valued sequences}
+\uprop Consider the metric space $(\R^d, \norm_2)$. Let $z \in \R^d$.\\
+Let $x : \N \to \R^d$. We will also denote this sequence with $(x^{(n)})$.\\
+Denote by $y_i$ the $i^{\text{th}}$ component of a vector $y \in \R^d$.\\
+The sequence $(x^{(n)})$ converges to $z$ if, and only if,
+\[
+    \forall i \in {1, \dots, d} \left[ \lim_{n \to \infty} (x_i^{(n)}) = z_i \right].
+\]
