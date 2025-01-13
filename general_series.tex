@@ -1,0 +1,64 @@
+\section{Series with general terms}
+
+
+\subsection{Leibniz test}
+\uthm Let $a,b : \N \to \R$ such that $b_n := (-1)^n a_n$.
+Assume that there exists a $K \in \N$ such that
+\begin{enumerate}[(i)]
+    \item $\forall k \geq K \left[ a_k \geq 0 \right]$,
+    \item $\forall k \geq K \left[ a_{k+1} \leq a_k \right]$,
+    \item $\lim_{n \to \infty} a_n = 0$.
+\end{enumerate}
+Then the series 
+\[
+    \sum_{n=0}^{\infty} b_n = \sum_{n=0}^{\infty} (-1)^n a_n
+\]
+converges.
+
+\subsubsection*{}
+\uprop If conditions (i), (ii), (iii) in the Leibniz test hold.
+Then for every $N \geq K$ and $S_n := \sum_{k=K}^{N} b_n$ the associated
+sequence of partial sums,
+\[
+    \left| S_N - \sum_{k=K}^{\infty} b_k \right| < a_{N + 1}.
+\]
+
+
+\subsection{Series characterisation of completeness in a normed vector space}
+\udef Let $(V, \norm)$ be a normed vector space. Let $a : \N \to V$.
+We say the series
+\[
+    \sum_{k=0}^{\infty} a_k
+\]
+\emph{converges absolutely} if
+\[
+    \sum_{k=0}^{\infty} \| a_k \|
+\]
+converges.
+
+\subsubsection*{Series characterisation of completeness}
+\udef We say a normed vector space $(V, \norm)$ satisfies the
+\emph{series characterisation of completeness} if every series in $V$
+that is absolutely convergent is also convergent.
+
+\udef Let $(V, \norm)$ be a normed vector space. Let $a : \N \to V$.
+We say that the series
+\[
+    \sum_{k=0}^{\infty} a_k
+\]
+\emph{converges conditionally} if it converges, but does not converge absolutely.
+
+
+\subsection{Cauchy product}
+Let $a, b, c : \N \to \R$.\\
+Define $c_k := \sum_{n}^{k=0} a_l b_{k-l}$.
+Assume that the series
+\[
+    \sum_{k=0}^{\infty} a_k \text{ and }
+    \sum_{k=0}^{\infty} b_k
+\]
+both converge absolutely. Then the following series also converges absolutely
+\[
+    \sum_{k=0}^{\infty} c_k = \left( \sum_{k=0}^{\infty} a_k \right)
+        + \left( \sum_{k=0}^{\infty} b_k \right)
+\]
