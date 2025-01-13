@@ -1,0 +1,101 @@
+\section{Series with positive terms}
+\emph{Note} that in this chapter positive will often be used instead
+of non-negative for simplicity.
+
+\subsubsection*{}
+Let $a_n : \N \to [0,\infty)$ be a positive real-values sequence.\\
+Consider the series with positive real values, $\sum_{n=0}^{\infty} a_n$.\\
+Then the associated sequence of partial sums $(S^{(n)})$ is non-decreasing,
+\[
+    S_{n+1} - S_n = a_{n+1} \geq 0.
+\]
+Therefore there are only two posibilities for the limit,
+\begin{enumerate}
+    \item $\lim_{n \to \infty} S_n$ exists, or
+    \item $\lim_{n \to \infty} S_n = \infty$.
+\end{enumerate}
+
+\subsection{Comparison test}
+\uthm Let $a,b : \N \to [0,\infty)$. Assume that
+\[
+    \exists N \in \N\ \forall n \geq N \left[ a_n \leq b_n \right].
+\]
+Then
+\begin{enumerate}[(i)]
+    \item Suppose $\sum_{n=0}^{\infty} b_k$ converges,\\
+        then also $\sum_{n=0}^{\infty} a_k$ converges.
+    \item Suppose $\sum_{n=0}^{\infty} a_k$ diverges,\\
+        then also $\sum_{n=0}^{\infty} b_k$ diverges.
+\end{enumerate}
+
+\subsection{Limit comparison test}
+\uthm Let $a,b : \N \to [0,\infty)$.
+\begin{enumerate}
+    \item Assume the series $\sum_{n=0}^{\infty} b_n$ converges, but not to $0$,
+        and assume the limit \[
+            \lim_{n \to \infty} \frac{a_n}{b_n} 
+        \] exists (i.e. the sequence $n \mapsto a_n / b_n$ converges).\\
+        Then the series $\sum_{n=0}^{\infty} a_n$ also converges.
+    \item Assume the series $\sum_{n=0}^{\infty} b_n$ diverges, and assume that 
+    either \[
+        \lim_{n \to \infty} \frac{a_n}{b_n} > 0,
+    \] or that \[
+        \lim_{n \to \infty} \frac{a_n}{b_n} = \infty.
+    \] Then the series $\sum_{n=0}^{\infty} a_n$ also diverges.
+\end{enumerate}
+
+\subsection{Ratio test}
+\uthm Let $a : \N \to (0, \infty)$.
+\begin{enumerate}
+    \item Assume that \[\exists q \in (0,1)\ \exists N \in \N\ \forall n \geq N
+        \left[ \frac{a_{n+1}}{a_n} < q \right]\] then the series
+        $\sum_{n=0}^{\infty} a_n$ converges.
+    \item Assume \[ \exists N \in \N\ \forall n \geq N \left[ 
+        \frac{a_{n+1}}{a_n} \geq 1 \right] \] then the series
+        $\sum_{n=0}^{\infty} a_n$ diverges.
+\end{enumerate}
+
+\subsubsection*{Ratio test, limit version}
+\ucol Let $a : \N \to (0, \infty)$.
+\begin{itemize}
+    \item if \[
+            \lim_{n \to \infty} \frac{a_{n+1}}{a_n} \in [0,1)
+        \] then the series $\sum_{k=0}^{\infty} a_k$ converges.
+    \item if \[
+            \lim_{n \to \infty} \frac{a_{n+1}}{a_n} \in (1,\infty) \text{ or }
+            \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \infty
+        \] then the series $\sum_{k=0}^{\infty} a_k$ diverges.
+\end{itemize}
+\warning We cannot conclude anything about the convergence of a series
+$\sum_{k=0}^{\infty} a_k$ when \[
+            \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = 1.
+\]
+
+\subsection{Ratio test}
+\uthm Let $a : \N \to [0,\infty)$.
+\begin{enumerate}[(i)]
+    \item Suppose \[
+            \exists q \in (0,1)\ \exists N \in \N\ \forall n \geq N \left[ 
+            \sqrt[n]{a_n} < q \right]
+        \] then $\sum_{k=0}^{\infty} a_k$ converges.
+    \item Suppose \[
+            \exists N \in \N\ \forall n \geq N \left[ 
+            \sqrt[n]{a_n} \geq 1 \right]
+        \] then $\sum_{k=0}^{\infty} a_k$ diverges.
+\end{enumerate}
+
+\subsubsection*{Root test, limit version}
+\ucol Let $a : \N \to [0, \infty)$.
+\begin{enumerate}[(i)]
+    \item if \[
+            \lim_{n \to \infty} \sqrt[n]{a_n} \in [0,1)
+        \] then the series $\sum_{k=0}^{\infty} a_k$ converges.
+    \item if \[
+            \lim_{n \to \infty} \sqrt[n]{a_n} \in (1,\infty) \text{ or }
+            \lim_{n \to \infty} \sqrt[n]{a_n} = \infty
+        \] then the series $\sum_{k=0}^{\infty} a_k$ diverges.
+\end{enumerate}
+\warning We cannot conclude anything about the convergence of a series
+$\sum_{k=0}^{\infty} a_k$ when \[
+            \lim_{n \to \infty} \sqrt[n]{a_n} = 1.
+\]
