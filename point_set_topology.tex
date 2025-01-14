@@ -1,0 +1,173 @@
+\section{Point-set topology of metric spaces}
+
+\subsection{Open sets}
+\subsubsection*{Open ball}
+\udef Let $(X, \dist)$ be a metric space. We define the open ball $B$ around
+a point $p \in X$ with radius $r > 0$ by
+\[
+    B(p,q) := \left\{ x \in X \middle| \dist(x,p) < r \right\}.
+\]
+
+\subsubsection*{Interior point}
+Let $(X, \dist)$ be a metric space.
+Let $O \subset X$. Let $a \in O$.\\
+Then $a$ is an \emph{interior point} of $O$ if
+\[
+    \exists r > 0 \left[ B(x,r) \subset O \right].
+\]
+
+\subsubsection*{Open subset}
+\udef Let $(X, \dist)$ be a metric space.
+Let $O \subset X$. Then $O$ is \emph{open} if
+\[
+    \forall x \in O\ \exists r > 0 \left[ B(x,r) \subset O \right].
+\]
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space. Then $X$ is open.
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space. Then $\varnothing \subset X$ is open.
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space. The open ball
+\[
+    B(p,q) := \left\{ x \in X \middle| \dist(x,p) < r \right\}.
+\]
+is indeed open.
+
+\subsubsection*{'Open intervals' are open sets}
+\uprop Let $a, b \in \R$, with $a < b$. Then the intervals $(a,b)$, $(a, \infty)$, and
+$(-\infty, b)$ are all open subsets of $\R$ in the normed vector space
+$(\R, \normR)$.
+
+\subsubsection*{Interior of a set}
+Let $(X, \dist)$ be a metric space. Let $A \subset X$. Then the \emph{interior}
+of $A$, denoted by $\setint A$ is the set of all interior points of $A$, i.e.
+\[
+    \setint A := \left\{ x \in A\ \middle|\ x \text{ is an interior point of } A \right\}.
+\]
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space. Let $A \subset X$. Then $\setint A$
+is open.
+
+\subsubsection*{Union of open sets is always open}
+\uthm Let $(X, \dist)$ be a metric space. Let $\mathcal{I}$.
+Assume that for every $\alpha \in \mathcal{I}$, we have $O_\alpha \subset X$.
+Suppose moreover that for all $\alpha \in \mathcal{I}$, $O_\alpha$ is open.
+Then also
+\[
+    \bigcup_{\alpha \in \mathcal{I}}\ O_\alpha
+\]
+is open.
+
+\subsubsection*{Finite intersections of open sets are open}
+\uprop Let $(X, \dist)$ be a metric space. Let $O_1, \dots, O_N$ be open subsets
+of $X$. Then the intersection
+\[
+    O_1 \cap \dots \cap O_N.
+\]
+is also open.
+
+\subsubsection*{Cartesian product of open sets}
+Let $O_1, \dots, O_d$ be open subsets of $\R$. Then
+\[
+    O_1 \times \dots \times O_d
+\]
+is an open subset of $(\R^d, \norm_2)$.
+
+\subsection{Closed sets}
+\udef Let $(X, \dist)$ be a metric space. We say a set $C \subset X$ is closed 
+if $X \setminus C$ is closed.
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space. Then $X$ is closed.
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space. Then $\varnothing \subset X$ is closed.
+
+\subsubsection*{'Closed intervals' are closed sets}
+\uprop Let $a, b \in \R$, with $a < b$. Then the interval $[a,b]$ is a closed
+subsets of $\R$ in the normed vector space $(\R, \normR)$.\\
+\emph{Note} that closed intervals are even compact.
+
+\subsubsection*{Intersections of closed sets are always closed}
+\uthm Let $(X, \dist)$ be a metric space. Let $\mathcal{I}$.
+Assume that for every $\alpha \in \mathcal{I}$, we have $C_\alpha \subset X$.
+Suppose moreover that for all $\alpha \in \mathcal{I}$, $C_\alpha$ is closed.
+Then also
+\[
+    \bigcap_{\alpha \in \mathcal{I}}\ C_\alpha
+\]
+is closed.
+
+\subsubsection*{Finite union of closed sets are open}
+\uprop Let $(X, \dist)$ be a metric space. Let $C_1, \dots, C_N$ be closed
+subsets of $X$. Then the intersection
+\[
+    C_1 \cap \dots \cap C_N.
+\]
+is also closed.
+
+\subsubsection*{Cartesian product of open sets}
+\uprop Let $C_1, \dots, C_d$ be closed subsets of $\R$. Then
+\[
+    C_1 \times \dots \times C_d
+\]
+is a closed subset of $(\R^d, \norm_2)$.
+
+\subsection*{Topological boundary}
+\udef Let $(X, \dist)$ be a metric space. Let $A \subset X$.
+The \emph{topological boundary} of $A$ is denoted by $\partial A$ and defined as
+\[
+    \partial A := X \setminus (\setint(A) \cup \setint (X \setminus A))
+\]
+
+\subsubsection*{Sequence characterization of closedness}
+\uprop Let $(X, \dist)$ be a metric space. A set $C \subset X$ is closed if,
+and only if,
+\[
+    \forall c : \N \to C\ \exists q \in X \left[ \lim_{n \to \infty} c_n = q \implies q \in x \right].
+\]
+
+\subsection{Cauchy sequence}
+\udef Let $(X, \dist)$ be a metric space. Let $a : \N \to X$. Then $a$ is a
+\emph{Cauchy Sequence} if
+\[
+    \forall \varepsilon > 0\ \exists N \in \N\ \forall m,n \geq N \left[ \dist(a_m, a_n) < \varepsilon \right].
+\]
+
+\subsubsection*{}
+\uprop Every Cauchy sequence is bounded.
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space. If $a : \N \to X$ converges then
+it is also a Cauchy sequence.
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space.
+Let $a : \N \to X$ be a Cauchy sequence. Assume there exists a subsequence $b$
+of $a$ such that $b$ converges to some $q \in X$. Then also $a$ converges to $q$.
+
+\subsection{Completeness}
+\udef Let $(X, \dist)$ be a metric space. Let $A \subset X$. We say A is
+\emph{complete} if, for evey Cauchy sequence in $A$ is convergent,
+with limit in $A$.
+
+\par
+We also say the metric space $(X, \dist)$ itself is complete if $X$ is a complete
+subset of $X$ in $(X, \dist)$.
+
+\par
+Every complete set is also closed.
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space. Let $C \subset X$ be complete.
+Let $A \subset C$. Then, $A$ is complete if, and only if, $A$ is closed.
+
+\subsubsection*{}
+\uprop The metric space $(\R^d, \dist_{\norm_2})$ is complete.
+
+\subsubsection*{}
+\uprop Every finite-dimensional normed vector space is complete.
