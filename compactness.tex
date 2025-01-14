@@ -1,0 +1,45 @@
+\section{Compactness}
+
+\subsubsection*{(Sequential) compacness}
+\udef Let $(X, \dist)$ be a metric space.
+We call $K \subset X$ \emph{(sequentially) compact} if for every sequence
+$x : \N \to K$ there exists an index sequence $n : \N \to \N$ such that
+the subsequence $x \circ n$ converges to a point $z \in K$.
+
+\subsubsection*{Bounded sets in metric spaces}
+\udef Let $(X, \dist)$ be a metric space. We call $A \subset X$ \emph{bounded} if
+\[
+    \exists q \in X\ \forall M > 0\ \forall x \in A
+        \left[ \dist(x,q) \leq M \right].
+\]
+
+\subsubsection*{Bounded sets in normed vector spaces}
+\uprop Let $(V, \norm)$ be a normed vector space. We call $A \subset V$ bounded if,
+and only if,
+\[
+    \exists M > 0\ \forall v \in A \left[ \| v \| \leq M \right].
+\]
+
+\subsubsection*{Total boundedness}
+\udef Let $(X, \dist)$ be a metric space. We say that $A \subset X$ is totally
+bounded if
+\[
+    \forall r > 0\ \exists N \in \N\ \exists p_1, \dots, p_N \in X
+        \left[ A \subset \bigcup_{i=1}^{N} B(p_i, r) \right].
+\]
+
+\subsubsection*{}
+\uprop Let $(X, \dist)$ be a metric space. If $A \subset X$ s totally bounded,
+then $A$ is also bounded.
+
+\subsubsection*{}
+\uprop Consider the normed vector space $(\R^d, \norm_2)$.
+$A \subset \R^d$ is totally bounded in $(\R^d, \norm_2)$ if, and only if,
+it is bounded.
+
+\subsection{Alt. Char. Compacness}
+\uthm Let $(X, \dist)$ be a metric space. $K \subset X$ is compact if, and only if,
+it is complete and totally bounded.
+
+\subsection{Heine-Borel theorom (for the real numbers)}
+A subset of $(\R^d, \norm_2)$ is compact if, and only if, it is closed and bounded.
