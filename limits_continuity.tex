@@ -1,0 +1,143 @@
+\section{Limits and Continuity}
+
+Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$. Let $f : D \to Y$.\\
+
+\subsubsection*{Accumulation point}
+Let $(X, \dist_X)$ be a metric space. Let $D \subseteq X$.
+We say a point $p \in X$ is an \emph{accumulation point} of the set $D$ if
+\[
+    \forall r > 0\ \exists x \in D
+        \left[ 0 < \dist_X(x,p) < r \right].
+\]
+We denote the set of all accumulation points of $D$ by $D'$.
+
+\subsubsection*{Isolated point}
+Let $(X, \dist_X)$ be a metric space. Let $D \subseteq X$.
+We say a point $a \in D$ is an \emph{isolated point} if
+it is not an accumulation point, i.e. if $a \in D \setminus D'$.
+
+\subsubsection*{Isolated point}
+\uprop Let $(X, \dist_X)$ be a metric space. Let $D \subseteq X$.
+$a \in D$ is an isolated point if, and only if
+\[
+    \neg \left(
+        \forall r > 0\ \exists x \in D \setminus \{a\}
+            \left[ 0 < \dist_X(x,a) < r \right],
+    \right)
+\]
+i.e.
+\[
+    \exists r > 0\ \forall x \in D \setminus \{a\}
+        \left[ \dist_X(x,a) \geq r \right].
+\]
+
+
+\subsection{Limit in sequential accumulation point}
+\udef Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$. Let $f : D \to Y$.\\
+Let $q \in Y$. Let $a \in D'$. We say $f$ converges to $q$ as $x$ goes to $a$,
+and write
+\[
+    \lim_{x \to a} f(x) = q
+\]
+if
+\[
+    \forall \varepsilon > 0\ \exists \delta > 0\ \forall x \in D
+        \left[ 0 < \dist_X(x,a) < \delta \implies \dist_Y(f(x),q) < \varepsilon \right].
+\]
+
+\subsubsection*{Uniqueness of limits}
+\uprop Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$. Let $f : D \to Y$.\\
+Let $a \in D'$ and assume
+\[
+    \lim_{x \to a} f(x) = p \in Y \text{ and }
+    \lim_{x \to a} f(x) = q \in Y.
+\]
+Then $p = q$.
+
+\newpage
+
+\subsection{Sequence Char. of limits}
+\uthm Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$. Let $f : D \to Y$.\\
+Let $a \in D'$. Let $q \in Y$. Then
+\[
+    \lim_{x \to a} f(x) = q.
+\]
+if, and only if,
+\[
+    \forall x : \N \to D \setminus \{a\} \left[ \lim_{n \to \infty} x_n = a
+    \implies \lim_{n \to \infty} f(x_n) = q \right].
+\]
+
+\subsection{Limit theoroms}
+Let $(X, \dist_X)$ be a metric space. Let $(V, \norm)$ be a normed vector space.
+Let $D \subset X$. Let $f,g : D \to V$. Let $a \in D'$.
+Assume $\lim_{x \to \infty} f(x) = p \in V$.
+Assume $\lim_{x \to \infty} g(x) = q \in V$.
+Let $\lambda \in \R$.
+Then
+\begin{enumerate}[(i)]
+    \item $\lim_{x \to a} \left( f(x) + g(x) \right) = p + q$.
+    \item $lim_{x \to a} \left( \lambda f(x) \right) = \lambda \cdot p$.
+\end{enumerate}
+
+
+\subsection{Continuity}
+\udef Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$. Let $f : D \to Y$.\\
+We say $f$ is \emph{continuous} in a point $a \in D \cap D'$ if
+\[
+    \lim_{x \to a} f(x) = f(a).
+\]
+If $a \in D \setminus D'$ then $f$ is also continuous in $a$.
+
+\subsubsection*{Continuity on the domain}
+\udef Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$. Let $f : D \to Y$.\\
+We say $f$ is \emph{continuous on $D$} if $f$ is continuous in every point $a \in D$.
+
+
+\subsubsection*{$\varepsilon$--$\delta$ characterisation of continuity in a point}
+\uthm Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$. Let $f : D \to Y$.\\
+Let $a \in D$. Then $f$ is continuous in $a$ if, and only if,
+\[
+    \forall \varepsilon > 0\ \exists \delta > 0\ \forall x \in D
+        \left[ 0 < \dist_X(x,a) < \delta \implies \dist_Y(f(x), f(a)) < \varepsilon \right].
+\]
+
+\subsubsection*{Seq. Char. for Continuity}
+\uthm Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$. Let $f : D \to Y$.\\
+Let $a \in D$. Then $f$ is continuous in $a$ if, and only if,
+\[
+    \forall x : \N \to D \left[ \lim_{n \to \infty} x_n = a
+        \implies \lim_{n \to \infty} f(x_n) = f(a) \right].
+\]
+
+\subsubsection*{Rules for continuous functions}
+\uthm Let $(X, \dist_X)$, $(Y, \dist_Y)$, $(Z, \dist_Z)$ be metric spaces.
+Let $D \subseteq X$, and $E \subseteq Y$. Let $f : D \to Y$, and $g : E \to Z$.
+Assume $f(D) \subseteq E$. Let $a \in D$. Assume $f$ is continuous in $a$ and
+assume $g$ is continuous in $f(a) \in E$.
+Then $g \circ f$ is continuous in $a$.
+
+\subsubsection*{Images of compact sets of continuous functions are continuous}
+\uthm Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $K \subseteq X$ be compact. Let $f : K \to Y$ be continuous on $K$.
+Then $f(K) \subset Y$ is compact.
+
+\subsection{Uniform Continuity}
+\udef Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$, $D \neq \varnothing$. Let $f : D \to Y$.\\
+We say $f$ is \emph{uniformly continuous} on $D$ if
+\[
+    \forall \varepsilon > 0\ \exists \delta > 0\ \forall p,q \in D
+        \left[ 0 < \dist_X(p,q) < \delta \implies \dist_Y(f(p), f(q)) < \varepsilon \right].
+\]
+\uprop Let $(X, \dist_X)$, $(Y, \dist_Y)$ be metric spaces.
+Let $D \subseteq X$, $D \neq \varnothing$. Let $f : D \to Y$ be uniformly
+continuous on $D$. Then $f$ is continuous on $D$.
