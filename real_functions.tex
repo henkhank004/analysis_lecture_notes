@@ -1,0 +1,233 @@
+\section{Real-valued functions}
+
+\subsection{Limit laws}
+\uthm Let $(X, \dist)$ be a metric space. Let $D \subset X$, let $a \in D'$.
+Let $f,g : D \to \R$.\\Assume $\lim_{x \to a} f(x) = M \in \R$ and 
+$\lim_{x \to a} g(x) = L \in \R$. Then
+\begin{enumerate}[(i)]
+    \item $\forall n \in \N \left[ \lim_{x \to a} (f(x))^n = M^n \right]$,
+    \item $\lim_{x \to a} (f(x) \cdot g(x)) = M \cdot L$,
+    \item if $L \neq 0$, then \[
+        \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{M}{L}, \]
+    \item If for all $x \in D$, $f(x) \geq 0$, then for all $k \in \N \setminus \{0\}$
+        \[ \lim_{x \to a} \sqrt[k]{f(x)} = \sqrt[k]{M} \].
+\end{enumerate}
+
+\subsection{Building new continuous functions}
+Let $(X, \dist)$ be a metric space. Let $D \subset X$. Let $a \in D$.
+Let $f,g : X \to \R$ be continuous in $a$. Then
+\begin{enumerate}[(i)]
+    \item for all $n \in \N$, $f^n$ is continuous in $a$,
+    \item $f + g$ is continuous in $a$,
+    \item $f \cdot g$ is continuous in $a$,
+    \item if $g(a) \neq 0$, $f/g$ is continuous in $a$,
+    \item if for all $x \in D$, $f(x) \geq 0$, then for all $k \in \N \setminus \{0\}$,
+        $\sqrt[k]{f}$ is continuous.
+\end{enumerate}
+
+\subsection{Continuity of standard functions}
+\uprop Every (possibly multivariate) polynomial is continuous as a function from
+$(\R^d, \norm_2)$ to $(\R, \normR)$.
+
+\subsubsection*{}
+\uprop Every (possibly multivariate) rational function is continuous on its
+domain of definition as a function from  $(\R^d, \norm_2)$ to $(\R, \normR)$.
+
+\subsubsection*{}
+\uprop The standard functions,
+\[ \begin{matrix}
+    \exp : \R \to \R & \sin : \R \to \R & \cos : \R \to \R & \tan : (-\pi/2, \pi/2) : \R \\
+    \ln : (0, \infty) \to \R & \arcsin : [-1,1] \to \R & \arccos : [-1,1] \to \R & \arctan : \R \to \R
+\end{matrix} \]
+are all continuous.
+
+
+\subsection{One-sided limits}
+\subsubsection*{Limit from the left}
+Let $(Y, \dist_Y)$ be a metric space. Let $D \subset \R$. Let $f : D \to Y$.
+Let $a \in ((-\infty, a) \cap D)'$. Let $q \in Y$. We say that
+\emph{$f(x)$ converges to $q$ as $x$ approaches $a$ from the left (or from below)}
+and write
+\[
+    \lim_{x \uparrow a} f(x) = q
+\]
+if
+\[
+    \forall \varepsilon > 0\ \exists \delta > 0\ \forall x \in D \cap (-\infty, a)
+        \left[ 0 < \distR(x,a) < \delta \implies \dist_Y(f(x), q) < \varepsilon \right].
+\]
+
+\subsubsection*{Limit from the right}
+Let $(Y, \dist_Y)$ be a metric space. Let $D \subset \R$. Let $f : D \to Y$.
+Let $a \in ((a, \infty) \cap D)'$. Let $q \in Y$. We say that
+\emph{$f(x)$ converges to $q$ as $x$ approaches $a$ from the right (or from above)}
+and write
+\[
+    \lim_{x \downarrow a} f(x) = q
+\]
+if
+\[
+    \forall \varepsilon > 0\ \exists \delta > 0\ \forall x \in D \cap (a, \infty)
+        \left[ 0 < \distR(x,a) < \delta \implies \dist_Y(f(x), q) < \varepsilon \right].
+\]
+
+\subsection{Limits to $\infty$ or $-\infty$}
+\subsubsection*{Divergence to $\infty$}
+\udef Let $(X, \dist_X)$ be a metric space. Let $D \subset X$. Let $a \in D'$.
+Let $f : D \to \R$. We say that \emph{$f$ diverges to $\infty$ in $a$} if
+\[
+    \forall M \in \R\ \exists \delta \geq 0\ \forall x \in D
+        \left[ 0 < \dist_X(x,a) < \delta \implies f(x) > M \right].
+\]
+
+\subsubsection*{Divergence to $-\infty$}
+\udef Let $(X, \dist_X)$ be a metric space. Let $D \subset X$. Let $a \in D'$.
+Let $f : D \to \R$. We say that \emph{$f$ diverges to $\infty$ in $a$} if
+\[
+    \forall M \in \R\ \exists \delta \geq 0\ \forall x \in D
+        \left[ 0 < \dist_X(x,a) < \delta \implies f(x) < M \right].
+\]
+
+\subsection{Limits at $\infty$ and $-\infty$}
+\subsubsection*{Limit at $\infty$}
+\udef Let $(Y, \dist_Y)$ be a metric space. Let $D \subset \R$ be bounded from above.
+Let $q \in Y$. Let $f : D \to Y$. We say \emph{$f$ converges to $q$ as $x \to \infty$},
+and write
+\[
+    \lim_{x \to \infty} f(x) = q
+\]
+if
+\[
+    \forall \varepsilon > 0\ \exists z \in \R, \forall x \in D
+        \left[ x > z \implies \dist_Y(f(x),q) < \varepsilon \right].
+\]
+
+\subsubsection*{Limit at $-\infty$}
+\udef Let $(Y, \dist_Y)$ be a metric space. Let $D \subset \R$ be bounded from below.
+Let $q \in Y$. Let $f : D \to Y$. We say \emph{$f$ converges to $q$ as $x \to -\infty$},
+and write
+\[
+    \lim_{x \to -\infty} f(x) = q
+\]
+if
+\[
+    \forall \varepsilon > 0\ \exists z \in \R, \forall x \in D
+        \left[ x < z \implies \dist_Y(f(x),q) < \varepsilon \right].
+\]
+
+
+\subsection{Intermediate Value Theorom (IVT)}
+\uthm Let $f : [a,b] \to \R$ be continuous. Let $c \in \R$ such that $c$
+is inbetween $f(a)$ and $f(b)$. Then,
+$\exists x \in [a,b] \left[ f(x) = c \right]$.
+
+
+\subsection{Extreme Value Theorom (EVT)}
+\uthm Let $(X, \dist)$ be a metric space. Let $K \subset X$, $K \neq \varnothing$
+be compact. Let $f : K \to \R$ be continuous. Then $f$ attains a maximum and
+a minimum on $K$. That is,
+\[
+    \exists m \in K\ \forall x \in K \left[ f(x) \geq f(m) \right]
+\]
+\[
+    \exists M \in K\ \forall x \in K \left[ f(x) \leq f(M) \right]
+\]
+
+
+\subsection{Equivalence of norms}
+\udef Let $V$ be a vector space. Let $\norm_A$ and $\norm_B$ be two distinct
+norms on $V$. We say that the norms $\norm_A$ and $\norm_B$ are \emph{equivalent}
+if
+\[
+    \exists c_1, c_2 > 0\ \forall v \in V
+    \left[ c_1 \| v \|_A \leq \| v \|_B \leq c_2 \| v \|_A \right].
+\]
+\uthm Let $V$ be a finite-dimensional vector space and let $\norm_A$ and $\norm_B$
+be distinct norms on $V$. Then $\norm_A$ and $\norm_B$ are equivalent norms.
+
+\subsubsection*{}
+\uthm Let $(V, \norm)$ be a finit-dimensional normed vector space.\\
+Then $V$ is complete.
+
+\subsubsection*{Heine-Borel Theorom}
+Let $(V, \norm)$ be a finite-dimensional normed vectorspace. Then $A \subset V$
+is compact if, and only if, it is closed and bounded.
+
+\newpage
+
+\subsection{Bounded linear maps}
+\subsubsection*{Linear map}
+\udef Let $V,W$ be vector spaces. A function $L : V \to W$ is called
+a \emph{linear map} if
+\begin{enumerate}[(i)]
+    \item $\forall a, b \in V \left[ L(a+b) = L(a) + L(b) \right]$, and
+    \item $\forall \lambda \in \R\ \forall a \in V \left[ L(\lambda a) = \lambda L(a) \right]$.
+\end{enumerate}
+
+
+\subsubsection*{Bounded linear map}
+\udef Let $(V, \norm_V), (W, \norm_W)$ be normed vector spaces. We say that a linear
+map $L : V \to W$ is \emph{bounded} if the $L$-image of the closed unit ball
+\[
+    \bar{B}_v := \left\{ v \in V \middle| \| v \|_V \leq 1 \right\}
+\]
+is a bounded subset of $(W, \norm_W)$, i.e. if
+$L(\bar{B}_V(0,1)) \subset W$ is bounded.
+
+\subsubsection*{}
+\uthm Let $(V, \norm_V), (W, \norm_W)$ be normed vector spaces.
+Assume that $V$ is finite-dimensional. Let $L : V \to W$ be a linear map.
+Then $L$ is bounded.
+
+\subsubsection*{}
+\uthm Let $(V, \norm_V), (W, \norm_W)$ be normed vector spaces.
+Let $L : V \to W$ be a linear map. The function $L$ is continuous if, and only if,
+it is bounded.
+
+\subsubsection*{}
+\uprop Let $(V, \norm_V), (W, \norm_W)$ be normed vector spaces.
+Assume $V$ is finite-dimensional. Let $L : V \to W$ a linear map.
+Then by the previous two theoroms, $L$ is bounded and continuous.
+
+\subsubsection*{Alt. char. bounded linear map}
+\uprop Let $(V, \norm_V), (W, \norm_W)$ be normed vector spaces. A linear map
+$L : V \to W$ is bounded if, and only if,
+\[
+    \exists M > 0\ \forall v \in V \left[ \| L(v) \|_W \leq M \| v \|_V \right].
+\]
+
+\subsubsection*{Vector space of bounded linear maps}
+\udef Let $(V, \norm_V), (W, \norm_W)$ be normed vector spaces.\\
+The space of bounded linear maps from $V$ to $W$ is denoted by $\blin(V, W)$.
+Addition and scalar multiplication are defined pointwise. That means,
+if $L, K : V \to W$ are bounded linear maps (i.e. $L,K \in \blin(V,W)$) and
+$\lambda \in \R$, then the map $L + K : V \to W$ is defined by
+\[
+    (L + K)(v) := L(v) + K(v)
+\]
+and the map $\lambda L : V \to W$ is defined by
+\[
+    (\lambda L)(v) = \lambda (L(v))
+\]
+The zero element of this vector space $\blin(V,W)$ is the map that maps
+every vector $v \in V$ to the zero-element $0 \in W$.
+
+
+\subsection{Operator Norm}
+\uprop Let $(V, \norm_V), (W, \norm_W)$ be normed vector spaced. Consider the vector
+space $\blin(V,W)$. Then the function $\opnormd : \blin(V,W) \to \R$ defined by
+\begin{align*}
+    \opnorm{L} :&= \sup_{x \in \bar{B}_V(0,1)} \| L(x) \|_W \\
+\end{align*}
+called the \emph{operator norm} is a norm on $\blin(V,W)$.
+
+\subsubsection*{}
+\uprop Let $(V, \norm_V), (W, \norm_W)$ be normed vector spaced.
+Let $L \in \blin(V,W)$. Then
+\[
+    \forall v \in V \left[ \| L(v) \|_W \leq \opnorm{L} \| v \|_V \right]
+\]
+and in fact
+\[
+    \opnorm{L} = \min \left\{ C \geq 0\ \middle|\ \forall v \in V, \| L(v) \|_W \leq C \| v \|_V \right\}
+\]
