@@ -81,6 +81,13 @@ is an open subset of $(\R^d, \norm_2)$.
 \udef Let $(X, \dist)$ be a metric space. We say a set $C \subset X$ is closed 
 if $X \setminus C$ is closed.
 
+\subsubsection*{Sequence characterization of closedness}
+\uprop Let $(X, \dist)$ be a metric space. A set $C \subset X$ is closed if,
+and only if,
+\[
+    \forall c : \N \to C\ \exists q \in X \left[ \lim_{n \to \infty} c_n = q \implies q \in C \right].
+\]
+
 \subsubsection*{}
 \uprop Let $(X, \dist)$ be a metric space. Then $X$ is closed.
 
@@ -122,13 +129,6 @@ is a closed subset of $(\R^d, \norm_2)$.
 The \emph{topological boundary} of $A$ is denoted by $\partial A$ and defined as
 \[
     \partial A := X \setminus (\setint(A) \cup \setint (X \setminus A))
-\]
-
-\subsubsection*{Sequence characterization of closedness}
-\uprop Let $(X, \dist)$ be a metric space. A set $C \subset X$ is closed if,
-and only if,
-\[
-    \forall c : \N \to C\ \exists q \in X \left[ \lim_{n \to \infty} c_n = q \implies q \in C \right].
 \]
 
 \subsection{Cauchy sequence}
